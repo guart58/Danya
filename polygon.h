@@ -19,9 +19,9 @@ public:
 	~polygon() {}
 
 	friend istream &operator>>(istream &stream, polygon &V);
-	//	friend ifstream& operator>>(ifstream& fstream, polygon& V);
+	friend ifstream &operator>>(ifstream &fstream, polygon &V);
 	friend ostream &operator<<(ostream &stream, polygon &V);
-	//	friend ofstream& operator<<(ofstream& fstream, polygon& V);
+	friend ofstream &operator<<(ofstream &fstream, polygon &V);
 };
 
 #endif

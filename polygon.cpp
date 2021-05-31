@@ -61,15 +61,16 @@ ostream &operator<<(ostream &stream, polygon &V)
 	return stream;
 }
 
-//ifstream& operator>>(ifstream& fstream, polygon& V)
-//{
-//	fstream >> V.side >> V.len;
-//	return fstream;
-//}
-//
-//ofstream& operator<<(ofstream& fstream, polygon& V)
-//{
-//	fstream << "\nМногоугольник: ";
-//	fstream << "\nСторон: " << V.side << "\tДлина стороны: " << V.len;
-//	return fstream;
-//}
+ifstream &operator>>(ifstream &fstream, polygon &V)
+{
+	fstream >> V.side >> V.len;
+	return fstream;
+}
+
+ofstream &operator<<(ofstream &fstream, polygon &V)
+{
+	fstream << "\nМногоугольник: ";
+	fstream << "\nСторон: " << V.side << "\tДлина стороны: " << V.len;
+	cout << "Выполнил.";
+	return fstream;
+}
