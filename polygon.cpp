@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <string.h>
 using namespace std;
@@ -9,19 +10,24 @@ void polygon::In()
 	cout << "\nВведите имя многоугольника: ";
 	cin >> name[24];
 	bool er = true, err = true;
-	while (er) {
+	while (er)
+	{
 		cout << "\nВведите количество сторон: ";
 		cin >> side;
-		if (side < 3) {
+		if (side < 3)
+		{
 			cout << "\nВы в курсе, что если сторон меньше 3, то это не многоугольник? Давайте вы попробуете еще разок))";
 		}
 		else
 			er = false;
 	}
-	while (err) {
+
+	while (err)
+	{
 		cout << "\nВведите длину стороны: ";
 		cin >> len;
-		if (len > 0) {
+		if (len > 0)
+		{
 			err = false;
 		}
 		else
@@ -31,7 +37,8 @@ void polygon::In()
 
 void polygon::Out()
 {
-	cout << name << endl << "Сторон: " << side << "\tДлина стороны: " << len << endl;
+	cout << name << endl
+			 << "Сторон: " << side << "\tДлина стороны: " << len << endl;
 }
 
 double polygon::Mod()
@@ -39,14 +46,14 @@ double polygon::Mod()
 	return (len * side);
 }
 
-ifstream& operator>>(ifstream& stream, polygon& V)
+istream &operator>>(istream &stream, polygon &V)
 {
 	cout << "\nВведите количество сторон и длину стороны: ";
 	stream >> V.side >> V.len;
 	return stream;
 }
 
-ofstream& operator<<(ofstream& stream, polygon& V)
+ostream &operator<<(ostream &stream, polygon &V)
 {
 	stream << "\nМногоугольник: ";
 	stream << "\nСторон: " << V.side << "\tДлина стороны: " << V.len;
