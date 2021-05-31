@@ -24,11 +24,11 @@ int main()
 	std::cin >> A >> B;
 	cout << A << B;
 
-	fin.open("C:\\Users\\Ваксий\\Desktop\\grt\\f1.txt");
+	fin.open("input.txt");
 	fin >> C;
 	fin.close();
 	cout << C;
-	fout.open("C:\\Users\\Ваксий\\Desktop\\grt\\f2.txt", ios::app);
+	fout.open("output.txt", ios::app);
 	fout << C;
 	fout.close();
 
