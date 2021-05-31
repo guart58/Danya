@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <string.h>
 using namespace std;
@@ -39,14 +40,14 @@ double polygon::Mod()
 	return (len * side);
 }
 
-ifstream& operator>>(ifstream& stream, polygon& V)
+istream& operator>>(istream& stream, polygon& V)
 {
 	cout << "\nВведите количество сторон и длину стороны: ";
 	stream >> V.side >> V.len;
 	return stream;
 }
 
-ofstream& operator<<(ofstream& stream, polygon& V)
+ostream& operator<<(ostream& stream, polygon& V)
 {
 	stream << "\nМногоугольник: ";
 	stream << "\nСторон: " << V.side << "\tДлина стороны: " << V.len;
@@ -54,15 +55,16 @@ ofstream& operator<<(ofstream& stream, polygon& V)
 	return stream;
 }
 
-//ifstream& operator>>(ifstream& fstream, polygon& V)
-//{
-//	fstream >> V.side >> V.len;
-//	return fstream;
-//}
-//
-//ofstream& operator<<(ofstream& fstream, polygon& V)
-//{
-//	fstream << "\nМногоугольник: ";
-//	fstream << "\nСторон: " << V.side << "\tДлина стороны: " << V.len;
-//	return fstream;
-//}
+ifstream& operator>>(ifstream& fstream, polygon& V)
+{
+	fstream >> V.side >> V.len;
+	return fstream;
+}
+
+ofstream& operator<<(ofstream& fstream, polygon& V)
+{
+	fstream << "\nМногоугольник: ";
+	fstream << "\nСторон: " << V.side << "\tДлина стороны: " << V.len;
+	cout << "Выполнил.";
+	return fstream;
+}
